@@ -1,0 +1,6 @@
+<h1>Your home page</h1>
+<% for bookmark in @bookmarks -%>
+  <div class="entry">
+    <h3><a href="<%= bookmark.url %>"><%= h(bookmark.title) %></a></h3>
+  <div>
+<% end %>

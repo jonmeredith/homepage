@@ -1,0 +1,16 @@
+<%= error_messages_for 'bookmark' %>
+
+<!--[form:bookmark]-->
+<p><label for="bookmark_title">Title</label><br/>
+<%= text_field 'bookmark', 'title'  %></p>
+
+<p><label for="bookmark_url">Url</label><br/>
+<%= text_field 'bookmark', 'url'  %></p>
+
+<p><label for="bookmark_clicks">Clicks</label><br/>
+<%= text_field 'bookmark', 'clicks'  %></p>
+
+<p><label for="bookmark_last_clicked">Last clicked</label><br/>
+<%= datetime_select 'bookmark', 'last_clicked'  %></p>
+<!--[eoform:bookmark]-->
+

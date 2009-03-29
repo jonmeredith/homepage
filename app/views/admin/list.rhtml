@@ -1,0 +1,26 @@
+<div id="bookmark-list">
+  <h1>Listing Bookmarks</h1>
+
+  <table cellpadding="5" cellspacing="0">  
+  <% for bookmark in @bookmarks %>
+    <tr valign="top" class="<%= cycle('list-line-odd','list-line-even') %>">
+      <td>
+        <span class="list-title"><%= h(bookmark.title) %></span><br />
+        <%= h(bookmark.url) %>
+      </td>
+      <td width="5%" class="list-actions">
+        <%= link_to 'Show', :action => 'show', :id => bookmark %>
+        <%= link_to 'Edit', :action => 'edit', :id => bookmark %>
+        <%= link_to 'Destroy', { :action => 'destroy', :id => bookmark }, :confirm => 'Are you sure?', :method => :post %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<%= link_to 'Previous page', { :page => @bookmark_pages.current.previous } if @bookmark_pages.current.previous %>
+<%= link_to 'Next page', { :page => @bookmark_pages.current.next } if @bookmark_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New bookmark', :action => 'new' %>
